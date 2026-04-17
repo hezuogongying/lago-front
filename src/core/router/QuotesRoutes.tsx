@@ -5,12 +5,16 @@ import { lazyLoad } from './utils'
 const Quotes = lazyLoad(() => import('~/pages/quotes/Quotes'))
 const QuoteDetails = lazyLoad(() => import('~/pages/quotes/QuoteDetails'))
 const CreateQuote = lazyLoad(() => import('~/pages/quotes/CreateQuote'))
+const EditQuote = lazyLoad(() => import('~/pages/quotes/EditQuote'))
+const VoidQuote = lazyLoad(() => import('~/pages/quotes/VoidQuote'))
 
 // ----------- Routes -----------
 export const QUOTES_LIST_ROUTE = '/quotes'
 export const QUOTES_TAB_ROUTE = `${QUOTES_LIST_ROUTE}/:tab`
 export const QUOTE_DETAILS_ROUTE = '/quote/:quoteId/:tab'
 export const CREATE_QUOTE_ROUTE = '/quote/create'
+export const EDIT_QUOTE_ROUTE = '/quote/:quoteId/edit'
+export const VOID_QUOTE_ROUTE = '/quote/:quoteId/void'
 
 export const quotesRoutes: CustomRouteObject[] = [
   {
@@ -33,5 +37,20 @@ export const quotesCreationRoutes: CustomRouteObject[] = [
     private: true,
     element: <CreateQuote />,
     permissions: ['quotesCreate'],
+  },
+  {
+    path: EDIT_QUOTE_ROUTE,
+    private: true,
+    element: <EditQuote />,
+    permissions: ['quotesUpdate'],
+  },
+]
+
+export const quotesVoidRoutes: CustomRouteObject[] = [
+  {
+    path: VOID_QUOTE_ROUTE,
+    private: true,
+    element: <VoidQuote />,
+    permissions: ['quotesVoid'],
   },
 ]

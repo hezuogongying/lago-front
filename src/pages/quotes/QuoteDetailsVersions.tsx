@@ -6,11 +6,7 @@ import { Status } from '~/components/designSystem/Status'
 import { Table, TableColumn } from '~/components/designSystem/Table/Table'
 import { Typography } from '~/components/designSystem/Typography'
 import { DetailsPage } from '~/components/layouts/DetailsPage'
-import {
-  GetQuotesQuery,
-  QuoteDetailItemFragment,
-  QuoteListItemFragment,
-} from '~/generated/graphql'
+import { GetQuotesQuery, QuoteDetailItemFragment, QuoteListItemFragment } from '~/generated/graphql'
 import { useInternationalization } from '~/hooks/core/useInternationalization'
 import { useOrganizationInfos } from '~/hooks/useOrganizationInfos'
 

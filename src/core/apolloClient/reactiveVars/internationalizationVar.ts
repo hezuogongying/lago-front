@@ -11,7 +11,7 @@ interface InternationalizationVar {
 }
 
 const internationalizationVar = makeVar<InternationalizationVar>({
-  locale: getItemFromLS(LOCALE_LS_KEY) ?? LocaleEnum['zh-CN'],
+  locale: getItemFromLS(LOCALE_LS_KEY) ?? LocaleEnum.en,
   translations: {},
 })
 
